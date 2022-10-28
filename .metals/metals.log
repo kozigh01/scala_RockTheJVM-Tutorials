@@ -1,0 +1,16 @@
+2022.10.28 09:53:39 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/mkozi/git/scala_RockTheJVM-Tutorials/.metals/lsp.trace.json or /home/mkozi/.cache/metals/lsp.trace.json[0m
+2022.10.28 09:53:40 INFO  logging to file /home/mkozi/git/scala_RockTheJVM-Tutorials/.metals/metals.log[0m
+2022.10.28 09:53:40 INFO  Started: Metals version 0.11.9 in workspace '/home/mkozi/git/scala_RockTheJVM-Tutorials' for client Visual Studio Code 1.72.2.[0m
+2022.10.28 09:53:44 INFO  time: initialize in 3.4s[0m
+2022.10.28 09:53:44 WARN  Build server is not auto-connectable.[0m
+2022.10.28 09:53:44 WARN  no build tool detected in workspace '/home/mkozi/git/scala_RockTheJVM-Tutorials'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.10.28 09:54:44 INFO  [0m
+2022.10.28 09:54:44 INFO  Template applied in /home/mkozi/git/scala_RockTheJVM-Tutorials/./youtube[0m
+2022.10.28 09:54:44 INFO  [0m
+2022.10.28 09:54:44 INFO  time: ran 'giter8.Giter8' in 6.54s[0m
+2022.10.28 09:56:09 WARN  no build target for: /home/mkozi/git/scala_RockTheJVM-Tutorials/youtube/src/main/scala/Main.scala[0m
+2022.10.28 09:56:12 INFO  no build target found for /home/mkozi/git/scala_RockTheJVM-Tutorials/youtube/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.2.0[0m
+2022.10.28 09:56:15 INFO  time: code lens generation in 5.27s[0m
+2022.10.28 10:00:30 WARN  no build tool detected in workspace '/home/mkozi/git/scala_RockTheJVM-Tutorials'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Oct 28, 2022 11:31:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
