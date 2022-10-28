@@ -27,21 +27,51 @@ val mustHaveThree2 = numberList2 match
 
 
 // pattern matching trick #2 Haskell-like prepending
-// val list1 = List(1,2,3,4,5)
-// val list1 = List(0,1,2,3,4,5)
-// val list1 = List()
-val list1: List[Int] = null
-val startsWithOne = list1 match
-  case 1 :: tail => s"List starts with 1, and tail = $tail"
+// val list2 = List(1,2,3,4,5)
+val list2 = List(0,1,2,3,4,5)
+// val list2 = List(0,1,2,3,4,5)
+// val list2 = List()
+// val list2: List[Int] = null
+val startsWithOne = list2 match
+  case ::(1, tail) => s"List starts with 1, and tail = $tail"
   case head :: tail => s"List starts with $head (not 1), and tail = $tail"
   case Nil => "List is empty"
-  case _ => "bad things, man"
+  case null => "bad things, man"
 
 
-  // pattern matching trick #3 vararg pattern
-  val list2 = List(1,2,3,4)
-  // val list2 = List(0,1,2,3,4)
-  val dontCareAboutTheRest = list2 match
-    case List(_, 2, _*) => "Only care about the 2nd element being 2"
-    case _ => "2nd element is not = 2" 
-  
+// pattern matching trick #3 vararg pattern
+val list3 = List(1,2,3,4)
+// val list3 = List(0,1,2,3,4)
+val dontCareAboutTheRest = list3 match
+  case List(_, 2, _*) => "Only care about the 2nd element being 2"
+  case _ => "2nd element is not = 2" 
+
+
+// pattern matching trick #4 other infix pattern
+val list4 = List(1,2,3,42)
+// val list4 = List(1,2,3,42,5)
+val mustEndWith42 = list4 match
+  case List(1,_,_*) :+ 42 => "The list ends with 42"
+  case _ => "The list does not end with 42"
+
+
+// pattern matching trick #5 type specifier
+// val gimmeAValue: Any = 45
+val gimmeAValue: Any = "45"
+val gimmeTheType = gimmeAValue match
+  case _: Int => "I got an Int"
+  case str: String => s"I got a string = '$str'"
+  case _ => "Not sure what we got"
+
+
+// pattern matching trick #6 name binding
+case class SocSecNum(first3: String, second2: String, third4: String)
+case class Person2(name: String, age: Int, ssn: SocSecNum)
+val betty = Person2("betty", 27, SocSecNum("999", "88", "7777"))
+def requestMoreInfo(p: Person2): String = s"The person ${p.name} is a good person."
+def bettysInfo = betty match
+  case p1 @ Person2(name, age, ssn2 @ ssn) => s"${p1.name}'s info: ${requestMoreInfo(p1)} - ${ssn2.first3}"
+bettysInfo
+
+
+// pattern matching trick #7 conditional guards
