@@ -75,3 +75,24 @@ bettysInfo
 
 
 // pattern matching trick #7 conditional guards
+val ordinal2 = aNumber match
+  case 1 => "first"
+  case 2 => "second"
+  case 3 => "third"
+  case n if n % 10 == 1 => n + "st"
+  case n if n % 10 == 2 => n + "nd"
+  case n if n % 10 == 3 => n + "rd"
+  case _ => aNumber + "th"
+
+ordinal2
+
+
+// pattern matching trick #8 alternative patterns
+// val list8 = List(1,2,3,42,5)
+val list8 = List(11,2,3,42,5)
+// val list8 = List(11,2,33,42,5)
+val myOptimalList = list8 match
+  case List(1,_*) 
+    |  List(_,_,3,_*) => "I like this list"
+  case _ => "I hate this list"
+myOptimalList
